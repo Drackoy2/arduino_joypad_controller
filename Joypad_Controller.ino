@@ -1,32 +1,11 @@
 #include <JoypadInput.h>
 
-/*Analog Joystick Pins*/
-#define JOY_PIN_0 0 /*X Axis for Joystick 1*/
-#define JOY_PIN_1 1 /*Y Axis for Joystick 1*/
-
-#define JOY_PIN_2 2 /*X Axis for Joystick 2*/
-#define JOY_PIN_3 3 /*Y Axis for Joystick 2*/
-
-/*Button Pins*/
-#define A_BUTTON 2
-#define B_BUTTON 3
-#define X_BUTTON 4
-#define Y_BUTTON 5
-#define D_PAD_UP 6
-#define D_PAD_DOWN 7
-#define D_PAD_LEFT 8
-#define D_PAD_RIGHT 9
-#define START_BUTTON 10
-#define SELECT_BUTTON 11
-#define R1_BUTTON 12
-#define R2_BUTTON 13
-#define L1_BUTTON 14
-#define L2_BUTTON 15
+Control control;
 
 /*
    For Joystick
 
-   int joystick1 = findJoystick1();
+   int joystick1 = control.joystick1(); (or control.joystick2(); )
 
    Outputs (what joystick1 will equal)
 
@@ -44,7 +23,7 @@
 
    For Buttons
 
-   int buttonPress = findButtonInput();
+   int buttonPress = control.button();
 
    Outputs (what buttonPress will equal)
 
@@ -70,9 +49,9 @@ void setup() {
 }
 
 void loop() {
-  int joystick1 = findJoystick1();
-  int joystick2 = findJoystick2();
-  int buttonPress = findButtonInput();
+  int joystick1 = control.joystick1();
+  int joystick2 = control.joystick2();
+  int buttonPress = control.button();
   Serial.println("Joystick 1 Input: ");
   Serial.print(joystick1);
   Serial.println("Joystick 2 Input: ");
