@@ -4,7 +4,7 @@ A simple Arduino library with 3 functions for easily mapping 2 joysticks and 14 
 
    For Joysticks
 
-int joystick1 = findJoystick1(); (or findJoystick2(); )
+int joystick1 = control.joystick1(); (or control.joystick2(); )
 
 Outputs (what joystick1 will equal)
 
@@ -14,7 +14,7 @@ Joystick Center = 0, Joystick Up = 1, Joystick Down = 2, Joystick Left = 3, Joys
 
    For Buttons
 
-int buttonPress = findButtonInput();
+int buttonPress = control.button();
 
 Outputs (what buttonPress will equal)
 
